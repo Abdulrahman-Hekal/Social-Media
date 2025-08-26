@@ -1,3 +1,4 @@
+const axios = require("axios");
 const baseUrl = "https://tarmeezacademy.com/api/v1";
 const postsContainer = document.getElementById("posts");
 const profile = document.getElementById("profile");
@@ -401,7 +402,9 @@ function restartTags() {
   }
 }
 function enlargeImage(url) {
-  document.getElementById("image-container").innerHTML = `<img src="${url}" alt="Post Image"/>`;
+  document.getElementById(
+    "image-container"
+  ).innerHTML = `<img src="${url}" alt="Post Image"/>`;
   imageModal.style.display = "block";
 }
 function goUp() {
