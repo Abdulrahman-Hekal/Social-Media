@@ -79,7 +79,7 @@ function deletePost() {
         getPosts();
       }
       if (isAtPost) {
-        location = "home.html";
+        location = "index.html";
       }
       if (isAtProfile) {
         getUserPosts(user.id);
@@ -195,7 +195,7 @@ function logout() {
     getPost(postID);
   }
   if (isAtProfile) {
-    location = "home.html";
+    location = "index.html";
   }
   showAlert("We Will Miss You, Come Back Soon.");
 }
