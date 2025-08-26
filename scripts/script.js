@@ -1,4 +1,3 @@
-const axios = require("axios");
 const baseUrl = "https://tarmeezacademy.com/api/v1";
 const postsContainer = document.getElementById("posts");
 const profile = document.getElementById("profile");
