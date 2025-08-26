@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Project</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./styles/all.min.css" />
+    <!-- My Styles -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
+  </head>
+  <body>
+    <!-- THE MAIN CONTENT -->
+    <!-- HEADER -->
+    <div class="container">
+      <header class="main-header">
+        <a class="profile" id="profile">
+          <i class="fa-solid fa-circle-user" style="font-size: 4rem"></i>
+          <span>Guest</span>
+        </a>
+        <div id="signing-options" class="signing-options"></div>
+      </header>
+    </div>
+    <!-- TAGS -->
+    <div class="container">
+      <section
+        style="margin-bottom: 3rem"
+        id="all-tags"
+        class="post tags-container"
+      ></section>
+    </div>
+    <!-- ADD POST -->
+    <div class="container">
+      <section
+        style="margin-bottom: 3rem"
+        id="add-post-section"
+        class="post"
+      ></section>
+    </div>
+    <!-- POSTS -->
+    <div class="container">
+      <main id="posts"></main>
+    </div>
+    <!-- THE TOGGLING CONTENT -->
+    <!-- WELCOME MODAL -->
+    <div class="modal" id="welcome-modal">
+      <div class="modal-content">
+        <header class="modal-header" style="justify-content: center;">
+          <h1>Welcome To My Project</h1>
+        </header>
+        <hr />
+        <main class="modal-body">
+          <div>
+            <p style="margin-bottom: 0.5rem;">This is my learning project using pure <b>(HTML, CSS, and JavaScript)</b></p>
+            <p style="margin-bottom: 0.5rem;">I want to thank <a href="https://www.youtube.com/@tarmeez">Tarmeez Academy</a>, <a href="https://www.youtube.com/@ElzeroWebSchool">Elzero Web School</a>, and <a href="https://www.freecodecamp.org/">freeCodeCamp</a> for there amazing effort in learning people for free.</p>
+          </div>
+          <form>
+            <div>
+              <input type="checkbox" id="welcome-input" style="width: fit-content; cursor: pointer;" />
+              <label for="welcome-input" style="display: inline; cursor: pointer;">Don't show again</label>
+            </div>
+          </form>
+        </main>
+        <hr />
+        <footer class="modal-footer">
+          <button type="button" onclick="welcome()">Welcome</button>
+        </footer>
+      </div>
+    </div>
+    <!-- LOGIN MODAL -->
+    <div class="modal" id="login-modal">
+      <div class="modal-content">
+        <header class="modal-header">
+          <h1>Login</h1>
+          <button type="button" onclick="hideLoginModal()">&times;</button>
+        </header>
+        <hr />
+        <main class="modal-body">
+          <form>
+            <div>
+              <label for="login-username">Username:</label>
+              <input type="text" id="login-username" />
+            </div>
+            <div>
+              <label for="login-password">Password:</label>
+              <input type="password" id="login-password" />
+            </div>
+          </form>
+        </main>
+        <hr />
+        <footer class="modal-footer">
+          <button type="button" onclick="hideLoginModal()">Close</button>
+          <button type="button" onclick="login()">Login</button>
+        </footer>
+      </div>
+    </div>
+    <!-- REGISTER MODAL -->
+    <div class="modal" id="register-modal">
+      <div class="modal-content">
+        <header class="modal-header">
+          <h1>Register</h1>
+          <button type="button" onclick="hideRegisterModal()">&times;</button>
+        </header>
+        <hr />
+        <main class="modal-body">
+          <form>
+            <div>
+              <label for="register-email">Email:</label>
+              <input type="email" id="register-email" />
+            </div>
+            <div>
+              <label for="register-name">Name:</label>
+              <input type="text" id="register-name" required />
+            </div>
+            <div>
+              <label for="register-username">Username:</label>
+              <input type="text" id="register-username" required />
+            </div>
+            <div>
+              <label for="register-password">Password:</label>
+              <input type="password" id="register-password" required />
+            </div>
+            <div>
+              <label for="register-confirmation">Confirm Password:</label>
+              <input type="password" id="register-confirmation" required />
+            </div>
+            <div>
+              <label for="register-photo">Photo:</label>
+              <input type="file" id="register-photo" />
+            </div>
+          </form>
+        </main>
+        <hr />
+        <footer class="modal-footer">
+          <button type="button" onclick="hideRegisterModal()">Close</button>
+          <button type="button" onclick="register()">Register</button>
+        </footer>
+      </div>
+    </div>
+    <!-- POST MODAL -->
+    <div class="modal" id="post-modal">
+      <div class="modal-content">
+        <header class="modal-header">
+          <h1>Edit Post</h1>
+          <button type="button" onclick="hidePostModal()">&times;</button>
+        </header>
+        <hr />
+        <main class="modal-body">
+          <form class="post-form">
+            <div>
+              <input type="hidden" id="edit-post-id" />
+              <label for="post-modal-title">Post Title:</label>
+              <input type="text" id="post-modal-title" />
+            </div>
+            <div>
+              <label for="post-modal-body">Post Body:</label>
+              <textarea
+                oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"
+                id="post-modal-body"
+              ></textarea>
+            </div>
+            <div>
+              <label for="post-modal-image">Post Image:</label>
+              <input type="file" id="post-modal-image" />
+            </div>
+          </form>
+        </main>
+        <hr />
+        <footer class="modal-footer">
+          <button type="button" onclick="hidePostModal()">Close</button>
+          <button type="button" onclick="editPost()">Edit</button>
+        </footer>
+      </div>
+    </div>
+    <!-- DELETE MODAL -->
+    <div class="modal" id="delete-modal">
+      <div class="modal-content">
+        <header class="modal-header">
+          <h1>Are You Sure To Delete This Post?</h1>
+          <button type="button" onclick="hideDeleteModal()">&times;</button>
+        </header>
+        <hr />
+        <input type="hidden" id="delete-post-id" />
+        <main id="deleted-post"></main>
+        <hr />
+        <footer class="modal-footer">
+          <button type="button" onclick="hideDeleteModal()">Cancel</button>
+          <button class="delete-post" type="button" onclick="deletePost()">
+            Delete
+          </button>
+        </footer>
+      </div>
+    </div>
+    <!-- IMAGE MODAL -->
+    <div class="modal" id="image-modal">
+      <main id="image-container"></main>
+      <button type="button" onclick="hideImageModal()">&times;</button>
+    </div>
+    <!-- ALERT -->
+    <div class="alert" id="alert"></div>
+    <!-- UP BTN -->
+    <button id="up-btn" class="up-btn" onclick="goUp()">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </body>
+  <!-- Axios -->
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+  <!-- My Code -->
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/home.js"></script>
+</html>

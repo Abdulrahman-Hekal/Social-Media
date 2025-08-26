@@ -1,0 +1,56 @@
+/* COMMENTS */
+#comments article:last-child {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.comment-form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+  textarea {
+    resize: none;
+    width: 100%;
+    font-size: 1.6rem;
+    border: none;
+    border-bottom: 2px solid #666;
+    padding-bottom: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    height: 25px;
+  }
+  textarea:focus {
+    outline: none;
+  }
+  button {
+    cursor: pointer;
+    color: white;
+    background-color: green;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+}
+@media (max-width: 350px) {
+  .comment-form {
+    flex-wrap: wrap;
+  }
+}
+.comment {
+  background-color: #a5e3ff;
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  main {
+    margin-top: 1.5rem;
+  }
+}

@@ -1,0 +1,359 @@
+/* Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  background-color: #b0d9f9;
+}
+.container {
+  margin: 0 auto;
+}
+li {
+  list-style: none;
+}
+button:hover {
+  opacity: 70%;
+}
+/* Small */
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+/* Medium */
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+/* Large */
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+/* X-Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+/* Header */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0px 0px 5px 0 #55555555;
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 3rem;
+}
+.profile {
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.signing-options button {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: blue;
+  border-color: blue;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.signing-options button:hover {
+  background-color: blue;
+  color: white;
+}
+.logout-btn {
+  color: red !important;
+  border-color: red !important;
+}
+.logout-btn:hover {
+  background-color: red !important;
+  color: white !important;
+}
+/* POSTS */
+.post {
+  background-color: white;
+  margin-bottom: 2rem;
+  padding: 0 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0 #55555555;
+  hr {
+    opacity: 50%;
+  }
+  .profile {
+    cursor: pointer;
+  }
+  header span {
+    font-weight: bold;
+  }
+  header + hr {
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  main p {
+    margin: 1rem 0;
+    opacity: 80%;
+  }
+  main img {
+    width: 100%;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  main div {
+    opacity: 70%;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+}
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background-color: #f1f1f1;
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px 5px 0 0;
+}
+.profile-image {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+}
+.post-btns button {
+  color: white;
+  background-color: green;
+  border: none;
+  font-size: 1.6rem;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.delete-post {
+  background-color: #b71c1c !important;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tag {
+  background-color: #555;
+  color: #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+}
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: #444;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    color: #444;
+    transition: 0.3s;
+  }
+  header button:hover {
+    opacity: 70%;
+  }
+  hr {
+    opacity: 50%;
+    width: calc(100% + 3rem);
+    margin: 1rem 0;
+    margin-left: -1.5rem;
+  }
+  main label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  main input {
+    width: min(85vw, 35rem);
+    font-size: 1.6rem;
+    border: 1px solid #555;
+    border-radius: 0.7rem;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+  }
+  main input[type="file"] {
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    font-size: 1.7rem;
+  }
+  main + hr {
+    margin-top: -0.5rem;
+  }
+  footer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    column-gap: 0.5rem;
+  }
+  footer button {
+    cursor: pointer;
+    color: white;
+    background-color: #555;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  footer button:hover {
+    opacity: 70%;
+  }
+  footer button:last-child {
+    background-color: blue;
+  }
+}
+#image-container {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  img {
+    width: 100%;
+  }
+}
+#image-container + button {
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  padding: 0 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 4.5rem;
+  color: black;
+  transition: 0.3s;
+}
+#image-container + button:hover {
+  border: 1px solid black;
+}
+/* ALERT */
+.alert {
+  visibility: hidden;
+  color: white;
+  background-color: #388e3cee;
+  border: 1px solid #08df13;
+  border-right: none;
+  font-size: 2rem;
+  padding: 3rem;
+  padding-right: 5rem;
+  width: fit-content;
+  max-width: 80vw;
+  border-radius: 1rem 0 0 1rem;
+  position: fixed;
+  right: 0;
+  bottom: 4rem;
+  z-index: 3;
+  transition: 0.3s;
+}
+.danger {
+  background-color: #9e1c1cee;
+  border-color: #ff0000;
+}
+/* UP BTN */
+.up-btn {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  position: fixed;
+  bottom: min(4rem, 5vw);
+  right: min(4rem, 5vw);
+  background-color: green;
+  color: white;
+  font-size: 1.8rem;
+  box-shadow: 0px 0px 5px 0 #55555555;
+  z-index: 1;
+  opacity: 60%;
+  transition: 0.3s;
+  visibility: hidden;
+}
+.up-btn:hover {
+  opacity: 100%;
+}
+/* LOADER */
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 2.6rem;
+  clip-path: inset(0 3ch 0 0);
+  animation: load 1s steps(4) infinite;
+}
+.loader:before {
+  content: "Loading...";
+}
+@keyframes load {
+  to {
+    clip-path: inset(0 -1ch 0 0);
+  }
+}

@@ -1,0 +1,76 @@
+/* TAGS */
+.tags-container {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    .tag {
+        cursor: pointer;
+        transition: 0.3s;
+    }
+}
+.tags-container .tag:hover {
+  background-color: rgb(42, 42, 187);
+}
+.tag.active {
+  background-color: rgb(42, 42, 187);
+}
+/* ADD POST */
+.post-form {
+  padding: 1rem 0;
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+  input {
+    width: min(100%, 55rem);
+    font-size: 1.6rem;
+    border: none !important;
+    border-bottom: 2px solid #666 !important;
+    border-radius: 0 !important;
+    margin-bottom: 1.5rem;
+    padding-bottom: 3px;
+    height: 25px;
+  }
+  input:focus {
+    outline: none;
+  }
+  textarea {
+    resize: none;
+    width: min(100%, 55rem);
+    font-size: 1.6rem;
+    border: none;
+    border-bottom: 2px solid #666;
+    padding-bottom: 3px;
+    margin-bottom: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    height: 25px;
+  }
+  textarea:focus {
+    outline: none;
+  }
+  input[type="file"] {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
+    cursor: pointer;
+    border: none !important;
+    height: fit-content;
+  }
+}
+.add-post-btn {
+  background-color: green;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.8rem;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
